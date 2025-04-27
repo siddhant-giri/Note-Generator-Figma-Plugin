@@ -1,8 +1,10 @@
 {
-  "name": "Notes Generator",
-  "id": "00000000",
+  "name": "Blink Notes",
+  "id": "1498265573521068738",
   "api": "1.0.0",
   "main": "dist/code.js",
   "ui": "dist/ui.html",
+  "documentAccess": "dynamic-page",
+  "networkAccess": { "allowedDomains": ["none"] },
   "editorType": ["figma", "figjam"]
 }

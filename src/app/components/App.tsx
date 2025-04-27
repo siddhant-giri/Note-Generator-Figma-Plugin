@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../styles/ui.css';
+import iconSvg from '../assets/icon.svg';
 
 function App() {
   const [tags, setTags] = useState<string[]>([]);
@@ -156,10 +157,16 @@ function App() {
   return (
     <div className="container">
       <div className="content-area" ref={contentRef}>
-        <div>
-          <h1 className="title">Notes Generator</h1>
-          <p className="subtext">Create and organize notes linked to your Figma elements.</p>
+        <div className="header-with-icon">
+          <div className="plugin-icon">
+            <img src={iconSvg} alt="Blink Notes Icon" width="40" height="40" />
+          </div>
+          <div className="header-text">
+            <h1 className="title"><span className='blink'>Blink</span> <span className='notes'>Notes</span></h1>
+            <p className="subtext">Create notes for your Designs in a blink.</p>
+          </div>
         </div>
+        <div className="divider"></div>
         
         <div className="linked-element">
           {linkedElement ? (
@@ -170,7 +177,7 @@ function App() {
           ) : (
             <div className="linked-badge unlinked">
               <span className="linked-icon">⚠️</span>
-              <span>No element selected, Select a Frame</span>
+              <span>Select a Frame or element</span>
             </div>
           )}
         </div>
@@ -269,7 +276,7 @@ function App() {
               <span className="loading-spinner"></span>
               Creating Note...
             </span> : 
-            'Create a Note'
+            'Create a Blink Note'
           }
         </button>
       </div>
